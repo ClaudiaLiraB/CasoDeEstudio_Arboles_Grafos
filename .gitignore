@@ -1,0 +1,14 @@
+# Archivos que Visual Studio NO debe subir
+.vs/
+*.user
+*.suo
+
+# Binarios y temporales
+bin/
+obj/
+Debug/
+Release/
+
+# Archivos de dependencias
+*.cache
+*.pdb
