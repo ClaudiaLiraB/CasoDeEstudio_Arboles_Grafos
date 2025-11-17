@@ -11,24 +11,25 @@ public class ArbolJerarquia
 {
     public NodoArbol Raiz { get; set; }
 
-    // Inserta un hijo bajo un padre (busca recursivamente)
-    public void Insertar(string padre, string hijo)
+    // Inserta un hijo bajo un padre
+    public bool Insertar(string padre, string hijo)
     {
         if (Raiz == null)
         {
             Raiz = new NodoArbol { Nombre = padre };
             Raiz.Hijos.Add(new NodoArbol { Nombre = hijo });
-            return;
+            return true;
         }
         var nodoPadre = Buscar(padre);
         if (nodoPadre != null)
         {
             nodoPadre.Hijos.Add(new NodoArbol { Nombre = hijo });
+            return true;
         }
         else
         {
-            // Opcional: Manejar si padre no existe (ej. insertar bajo raíz)
-            Console.WriteLine("Padre no encontrado.");
+            // Padre no encontrado, no inserta
+            return false;
         }
     }
 
@@ -38,7 +39,7 @@ public class ArbolJerarquia
         return BuscarRecursivo(Raiz, nombre);
     }
 
-    // Método auxiliar recursivo para buscar
+    // Método para buscar
     private NodoArbol BuscarRecursivo(NodoArbol nodo, string nombre)
     {
         if (nodo == null) return null;
@@ -51,7 +52,7 @@ public class ArbolJerarquia
         return null; // Cubre el caso si no se encuentra
     }
 
-    // Recorrer en preorden (devuelve lista de strings para Forms)
+    // Recorre en preorden
     public List<string> RecorrerPreorden(NodoArbol nodo)
     {
         List<string> resultado = new List<string>();
@@ -61,7 +62,7 @@ public class ArbolJerarquia
         return resultado;
     }
 
-    // Contar nodos totales
+    // Cuenta los nodos totales
     public int ContarNodos(NodoArbol nodo)
     {
         if (nodo == null) return 0;
@@ -70,7 +71,7 @@ public class ArbolJerarquia
         return count;
     }
 
-    // Mostrar niveles (devuelve lista de strings por nivel, usando BFS)
+    // Muestra niveles (devuelve lista de strings por nivel, usando BFS)
     public List<string> MostrarNiveles()
     {
         List<string> resultado = new List<string>();
@@ -95,7 +96,7 @@ public class ArbolJerarquia
         return resultado;
     }
 
-    // Buscar modificado para Forms (devuelve lista de strings con resultado)
+    // Devuelve lista de strings con resultado)
     public List<string> BuscarParaForms(string nombre)
     {
         var nodo = Buscar(nombre);

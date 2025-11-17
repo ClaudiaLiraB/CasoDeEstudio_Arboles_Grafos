@@ -30,35 +30,35 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnMostrarArbol = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnRecorrerPreorden = new System.Windows.Forms.Button();
+            this.lbArbol = new System.Windows.Forms.ListBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnInsertarNodo = new System.Windows.Forms.Button();
+            this.tbHijo = new System.Windows.Forms.TextBox();
+            this.tbPadre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbGrafo = new System.Windows.Forms.ListBox();
+            this.btnCalcularRuta = new System.Windows.Forms.Button();
+            this.tbFin = new System.Windows.Forms.TextBox();
+            this.tbInicio = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnMostrarConexiones = new System.Windows.Forms.Button();
+            this.tbConsultar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnAgregarArista = new System.Windows.Forms.Button();
+            this.tbDistancia = new System.Windows.Forms.TextBox();
+            this.tbEdificio2 = new System.Windows.Forms.TextBox();
+            this.tbEdificio1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -77,16 +77,16 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button5);
+            this.tabPage1.Controls.Add(this.btnMostrarArbol);
             this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Controls.Add(this.btnRecorrerPreorden);
+            this.tabPage1.Controls.Add(this.lbArbol);
             this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.btnInsertarNodo);
+            this.tabPage1.Controls.Add(this.tbHijo);
+            this.tabPage1.Controls.Add(this.tbPadre);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -97,21 +97,126 @@
             this.tabPage1.Text = "Árbol";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnMostrarArbol
+            // 
+            this.btnMostrarArbol.Location = new System.Drawing.Point(658, 320);
+            this.btnMostrarArbol.Name = "btnMostrarArbol";
+            this.btnMostrarArbol.Size = new System.Drawing.Size(91, 46);
+            this.btnMostrarArbol.TabIndex = 11;
+            this.btnMostrarArbol.Text = "Mostrar Árbol";
+            this.btnMostrarArbol.UseVisualStyleBackColor = true;
+            this.btnMostrarArbol.Click += new System.EventHandler(this.btnMostrarArbol_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(542, 320);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(91, 46);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Contar Nodos";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // btnRecorrerPreorden
+            // 
+            this.btnRecorrerPreorden.Location = new System.Drawing.Point(427, 320);
+            this.btnRecorrerPreorden.Name = "btnRecorrerPreorden";
+            this.btnRecorrerPreorden.Size = new System.Drawing.Size(91, 46);
+            this.btnRecorrerPreorden.TabIndex = 9;
+            this.btnRecorrerPreorden.Text = "Recorrer Preorden";
+            this.btnRecorrerPreorden.UseVisualStyleBackColor = true;
+            this.btnRecorrerPreorden.Click += new System.EventHandler(this.btnRecorrerPreorden_Click);
+            // 
+            // lbArbol
+            // 
+            this.lbArbol.FormattingEnabled = true;
+            this.lbArbol.ItemHeight = 16;
+            this.lbArbol.Location = new System.Drawing.Point(438, 26);
+            this.lbArbol.Name = "lbArbol";
+            this.lbArbol.Size = new System.Drawing.Size(293, 276);
+            this.lbArbol.TabIndex = 8;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(152, 187);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(249, 22);
+            this.textBox3.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 193);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Buscar Nodo:";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(285, 228);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 38);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnInsertarNodo
+            // 
+            this.btnInsertarNodo.Location = new System.Drawing.Point(285, 115);
+            this.btnInsertarNodo.Name = "btnInsertarNodo";
+            this.btnInsertarNodo.Size = new System.Drawing.Size(116, 38);
+            this.btnInsertarNodo.TabIndex = 4;
+            this.btnInsertarNodo.Text = "Insertar nodo";
+            this.btnInsertarNodo.UseVisualStyleBackColor = true;
+            this.btnInsertarNodo.Click += new System.EventHandler(this.btnInsertarNodo_Click);
+            // 
+            // tbHijo
+            // 
+            this.tbHijo.Location = new System.Drawing.Point(152, 63);
+            this.tbHijo.Name = "tbHijo";
+            this.tbHijo.Size = new System.Drawing.Size(249, 22);
+            this.tbHijo.TabIndex = 3;
+            // 
+            // tbPadre
+            // 
+            this.tbPadre.Location = new System.Drawing.Point(152, 26);
+            this.tbPadre.Name = "tbPadre";
+            this.tbPadre.Size = new System.Drawing.Size(249, 22);
+            this.tbPadre.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre del Hijo:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre del Padre:";
+            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.listBox2);
-            this.tabPage2.Controls.Add(this.button8);
-            this.tabPage2.Controls.Add(this.textBox9);
-            this.tabPage2.Controls.Add(this.textBox8);
+            this.tabPage2.Controls.Add(this.lbGrafo);
+            this.tabPage2.Controls.Add(this.btnCalcularRuta);
+            this.tabPage2.Controls.Add(this.tbFin);
+            this.tabPage2.Controls.Add(this.tbInicio);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.textBox7);
+            this.tabPage2.Controls.Add(this.btnMostrarConexiones);
+            this.tabPage2.Controls.Add(this.tbConsultar);
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.btnAgregarArista);
+            this.tabPage2.Controls.Add(this.tbDistancia);
+            this.tabPage2.Controls.Add(this.tbEdificio2);
+            this.tabPage2.Controls.Add(this.tbEdificio1);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
@@ -123,198 +228,38 @@
             this.tabPage2.Text = "Grafo";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lbGrafo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre del Padre:";
+            this.lbGrafo.FormattingEnabled = true;
+            this.lbGrafo.ItemHeight = 16;
+            this.lbGrafo.Location = new System.Drawing.Point(425, 165);
+            this.lbGrafo.Name = "lbGrafo";
+            this.lbGrafo.Size = new System.Drawing.Size(294, 196);
+            this.lbGrafo.TabIndex = 15;
             // 
-            // label2
+            // btnCalcularRuta
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre del Hijo:";
+            this.btnCalcularRuta.Location = new System.Drawing.Point(525, 103);
+            this.btnCalcularRuta.Name = "btnCalcularRuta";
+            this.btnCalcularRuta.Size = new System.Drawing.Size(115, 41);
+            this.btnCalcularRuta.TabIndex = 14;
+            this.btnCalcularRuta.Text = "Calcular ruta más corta";
+            this.btnCalcularRuta.UseVisualStyleBackColor = true;
+            this.btnCalcularRuta.Click += new System.EventHandler(this.btnCalcularRuta_Click);
             // 
-            // textBox1
+            // tbFin
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 22);
-            this.textBox1.TabIndex = 2;
+            this.tbFin.Location = new System.Drawing.Point(488, 62);
+            this.tbFin.Name = "tbFin";
+            this.tbFin.Size = new System.Drawing.Size(152, 22);
+            this.tbFin.TabIndex = 13;
             // 
-            // textBox2
+            // tbInicio
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 22);
-            this.textBox2.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(285, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 38);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Insertar nodo";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(285, 228);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 38);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 193);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Buscar Nodo:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(152, 187);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(249, 22);
-            this.textBox3.TabIndex = 7;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(438, 26);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(293, 276);
-            this.listBox1.TabIndex = 8;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(427, 320);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 46);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Recorrer Preorden";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(542, 320);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 46);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Contar Nodos";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(658, 320);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(91, 46);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Mostrar Niveles";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Edificio 1:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 16);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Edificio 2:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 103);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 16);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Distancia:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(94, 24);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(152, 22);
-            this.textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(94, 62);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(152, 22);
-            this.textBox5.TabIndex = 4;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(94, 99);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(152, 22);
-            this.textBox6.TabIndex = 5;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(151, 140);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(95, 47);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Agregar Arista";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 237);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 16);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Edificio a consultar:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(152, 234);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(152, 22);
-            this.textBox7.TabIndex = 8;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(209, 273);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(95, 47);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Mostrar Conexiones";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(441, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 16);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Inicio:";
+            this.tbInicio.Location = new System.Drawing.Point(488, 21);
+            this.tbInicio.Name = "tbInicio";
+            this.tbInicio.Size = new System.Drawing.Size(152, 22);
+            this.tbInicio.TabIndex = 12;
             // 
             // label9
             // 
@@ -325,37 +270,98 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Fin:";
             // 
-            // textBox8
+            // label8
             // 
-            this.textBox8.Location = new System.Drawing.Point(488, 21);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(152, 22);
-            this.textBox8.TabIndex = 12;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(441, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 16);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Inicio:";
             // 
-            // textBox9
+            // btnMostrarConexiones
             // 
-            this.textBox9.Location = new System.Drawing.Point(488, 62);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(152, 22);
-            this.textBox9.TabIndex = 13;
+            this.btnMostrarConexiones.Location = new System.Drawing.Point(209, 273);
+            this.btnMostrarConexiones.Name = "btnMostrarConexiones";
+            this.btnMostrarConexiones.Size = new System.Drawing.Size(95, 47);
+            this.btnMostrarConexiones.TabIndex = 9;
+            this.btnMostrarConexiones.Text = "Mostrar Conexiones";
+            this.btnMostrarConexiones.UseVisualStyleBackColor = true;
+            this.btnMostrarConexiones.Click += new System.EventHandler(this.btnMostrarConexiones_Click);
             // 
-            // button8
+            // tbConsultar
             // 
-            this.button8.Location = new System.Drawing.Point(501, 100);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(115, 41);
-            this.button8.TabIndex = 14;
-            this.button8.Text = "Calcular ruta más corta";
-            this.button8.UseVisualStyleBackColor = true;
+            this.tbConsultar.Location = new System.Drawing.Point(152, 234);
+            this.tbConsultar.Name = "tbConsultar";
+            this.tbConsultar.Size = new System.Drawing.Size(152, 22);
+            this.tbConsultar.TabIndex = 8;
             // 
-            // listBox2
+            // label7
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(425, 165);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(294, 196);
-            this.listBox2.TabIndex = 15;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(24, 237);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(122, 16);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Edificio a consultar:";
+            // 
+            // btnAgregarArista
+            // 
+            this.btnAgregarArista.Location = new System.Drawing.Point(151, 140);
+            this.btnAgregarArista.Name = "btnAgregarArista";
+            this.btnAgregarArista.Size = new System.Drawing.Size(95, 47);
+            this.btnAgregarArista.TabIndex = 6;
+            this.btnAgregarArista.Text = "Agregar Arista";
+            this.btnAgregarArista.UseVisualStyleBackColor = true;
+            this.btnAgregarArista.Click += new System.EventHandler(this.btnAgregarArista_Click);
+            // 
+            // tbDistancia
+            // 
+            this.tbDistancia.Location = new System.Drawing.Point(94, 99);
+            this.tbDistancia.Name = "tbDistancia";
+            this.tbDistancia.Size = new System.Drawing.Size(152, 22);
+            this.tbDistancia.TabIndex = 5;
+            // 
+            // tbEdificio2
+            // 
+            this.tbEdificio2.Location = new System.Drawing.Point(94, 62);
+            this.tbEdificio2.Name = "tbEdificio2";
+            this.tbEdificio2.Size = new System.Drawing.Size(152, 22);
+            this.tbEdificio2.TabIndex = 4;
+            // 
+            // tbEdificio1
+            // 
+            this.tbEdificio1.Location = new System.Drawing.Point(94, 24);
+            this.tbEdificio1.Name = "tbEdificio1";
+            this.tbEdificio1.Size = new System.Drawing.Size(152, 22);
+            this.tbEdificio1.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(24, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Distancia:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 16);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Edificio 2:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Edificio 1:";
             // 
             // Form1
             // 
@@ -379,32 +385,32 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbArbol;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnInsertarNodo;
+        private System.Windows.Forms.TextBox tbHijo;
+        private System.Windows.Forms.TextBox tbPadre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnMostrarArbol;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnRecorrerPreorden;
+        private System.Windows.Forms.Button btnAgregarArista;
+        private System.Windows.Forms.TextBox tbDistancia;
+        private System.Windows.Forms.TextBox tbEdificio2;
+        private System.Windows.Forms.TextBox tbEdificio1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button btnMostrarConexiones;
+        private System.Windows.Forms.TextBox tbConsultar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ListBox lbGrafo;
+        private System.Windows.Forms.Button btnCalcularRuta;
+        private System.Windows.Forms.TextBox tbFin;
+        private System.Windows.Forms.TextBox tbInicio;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
     }
