@@ -19,10 +19,11 @@ namespace InnovatecProyecto
         {
             InitializeComponent();
 
-            // Limpia TextBoxes al inicio (si tienen valores por defecto)
+            tvArbol.Nodes.Clear();
+
+            // Limpia TextBoxes al inicio
             tbPadre.Text = "";
             tbHijo.Text = "";
-            // Opcional: Limpia otros TextBoxes si es necesario
             tbEdificio1.Text = "";
             tbEdificio2.Text = "";
             tbDistancia.Text = "";
@@ -56,17 +57,21 @@ namespace InnovatecProyecto
             if (exito)
             {
                 MessageBox.Show("Nodo insertado correctamente.");
-                // Refresca el ListBox solo si se insertó
+                // Refresca ListBox
                 lbArbol.Items.Clear();
                 var recorrido = arbol.RecorrerPreorden(arbol.Raiz);
                 lbArbol.Items.AddRange(recorrido.ToArray());
-                // Limpia TextBoxes para la próxima inserción
+                // Refresca TreeView
+                tvArbol.Nodes.Clear();
+                arbol.PoblarTreeView(tvArbol.Nodes, arbol.Raiz);
+                if (tvArbol.Nodes.Count > 0) tvArbol.Nodes[0].Expand();
+                // Limpia TextBoxes
                 tbPadre.Text = "";
                 tbHijo.Text = "";
             }
             else
             {
-                MessageBox.Show($"Error: Padre '{padre}' no encontrado. No se pudo insertar.");
+                MessageBox.Show($"Error: Padre '{padre}' no encontrado.");
             }
         }
 
@@ -88,7 +93,6 @@ namespace InnovatecProyecto
             }
             grafo.AgregarArista(ed1, ed2, dist);
             MessageBox.Show("Arista agregada.");
-            // Opcional: Refresca conexiones si quieres
         }
 
         private void btnMostrarConexiones_Click(object sender, EventArgs e)
@@ -121,15 +125,14 @@ namespace InnovatecProyecto
 
         private void btnMostrarArbol_Click(object sender, EventArgs e)
         {
-            lbArbol.Items.Clear();
+            tvArbol.Nodes.Clear();
             if (arbol.Raiz == null)
             {
-                lbArbol.Items.Add("El árbol está vacío.");
+                tvArbol.Nodes.Add("El árbol está vacío.");
                 return;
             }
-            var recorrido = arbol.RecorrerPreorden(arbol.Raiz);
-            lbArbol.Items.Add("Recorrido Preorden:");
-            lbArbol.Items.AddRange(recorrido.ToArray());
+            arbol.PoblarTreeView(tvArbol.Nodes, arbol.Raiz);
+            if (tvArbol.Nodes.Count > 0) tvArbol.Nodes[0].Expand();
         }
     }
 }

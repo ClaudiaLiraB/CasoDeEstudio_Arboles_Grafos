@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 public class NodoArbol
 {
@@ -107,6 +108,19 @@ public class ArbolJerarquia
         else
         {
             return new List<string> { $"Nodo '{nombre}' no encontrado." };
+        }
+    }
+
+    public void PoblarTreeView(TreeNodeCollection nodosTreeView, NodoArbol nodoArbol)
+    {
+        if (nodoArbol == null) return;
+        // Crea un nodo en TreeView con el nombre
+        TreeNode nodoTV = new TreeNode(nodoArbol.Nombre);
+        nodosTreeView.Add(nodoTV);
+        // Recursivamente agrega hijos
+        foreach (var hijo in nodoArbol.Hijos)
+        {
+            PoblarTreeView(nodoTV.Nodes, hijo);
         }
     }
 }

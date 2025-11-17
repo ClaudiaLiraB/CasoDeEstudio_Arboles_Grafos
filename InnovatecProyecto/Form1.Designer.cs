@@ -59,6 +59,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.tvArbol = new System.Windows.Forms.TreeView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -77,10 +78,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.tvArbol);
             this.tabPage1.Controls.Add(this.btnMostrarArbol);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.btnRecorrerPreorden);
-            this.tabPage1.Controls.Add(this.lbArbol);
             this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.button2);
@@ -89,6 +90,7 @@
             this.tabPage1.Controls.Add(this.tbPadre);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.lbArbol);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -132,7 +134,7 @@
             this.lbArbol.ItemHeight = 16;
             this.lbArbol.Location = new System.Drawing.Point(438, 26);
             this.lbArbol.Name = "lbArbol";
-            this.lbArbol.Size = new System.Drawing.Size(293, 276);
+            this.lbArbol.Size = new System.Drawing.Size(301, 20);
             this.lbArbol.TabIndex = 8;
             // 
             // textBox3
@@ -363,6 +365,13 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Edificio 1:";
             // 
+            // tvArbol
+            // 
+            this.tvArbol.Location = new System.Drawing.Point(438, 26);
+            this.tvArbol.Name = "tvArbol";
+            this.tvArbol.Size = new System.Drawing.Size(301, 274);
+            this.tvArbol.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -413,6 +422,7 @@
         private System.Windows.Forms.TextBox tbInicio;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TreeView tvArbol;
     }
 }
 
